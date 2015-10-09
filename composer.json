@@ -1,0 +1,24 @@
+{
+  "name": "vantt/mailhogapi-php",
+  "description": "Implement all interface about ddd",
+  "homepage": "https://github.com/vantt/mailhogapi-php",
+  "keywords": ["mailhog", "hog", "email", "mail", "emailcatcher", "catcher", "test"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tran Toan Van",
+      "email": "trantoanvan@outlook.com"
+    }
+  ],
+
+  "require": {
+    "guzzlehttp/guzzle": "^6.1"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "MailHog\\": "src",
+      "MailHog\\Tests\\": "test"
+    }
+  }
+}
