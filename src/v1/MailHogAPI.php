@@ -45,19 +45,19 @@ class MailHogAPI {
     /**
      * Get last email sent
      *
-     * @return null|MailHogEmailData
+     * @return FALSE|MailHogEmailData
      */
     public function getLastEmail() {
-        if ($email = reset($this->getAllEmails())) {
-            return $this->getEmailById($email->ID);
-        }
-
-        return NULL;
+        return reset($this->getAllEmails());
     }
 
-
+    /**
+     * @param string $id
+     *
+     * @return Email|FALSE
+     */
     public function getEmailById($id) {
-        $email    = NULL;
+        $email    = FALSE;
         $response = $this->client->get('messages/' . $id);
 
         if (200 == $response->getStatusCode()) {
@@ -67,6 +67,11 @@ class MailHogAPI {
         return $email;
     }
 
+    /**
+     * @param string $id
+     *
+     * @return bool
+     */
     public function deleteEmail($id) {
         $response = $this->client->delete('messages/' . $id);
 
