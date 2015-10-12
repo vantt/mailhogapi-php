@@ -5,7 +5,7 @@ use stdClass;
 
 class Email {
 
-    private $email;
+    protected $email;
 
     /**
      * MailHogEmail constructor.
